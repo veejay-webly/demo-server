@@ -3,13 +3,15 @@ package main
 import (
 	"flag"
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 	"time"
+
+	log "github.com/sirupsen/logrus"
 )
 
 func main() {
+	log.Info("demo-server starting ...")
 	port := flag.String("port", "3001", "Specify port to use")
 	flag.Parse()
 
@@ -20,6 +22,7 @@ func main() {
 	http.HandleFunc("/hi", handler)
 	http.HandleFunc("/date", dateHandler)
 
+	log.Infof("Server listening on port: %s", *port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", *port), nil))
 }
 
