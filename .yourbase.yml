@@ -16,3 +16,13 @@ ci:
   builds:
     - name: default
       build_target: default
+
+
+package:
+  docker:
+    base_image: ubuntu
+    image: demo-server
+    working_dir: /
+    exec: /demo-server
+  artifacts:
+    - demo-server
