@@ -5,7 +5,7 @@ dependencies:
 build_targets:
   - name: default
     tags:
-      os: darwin
+      os: linux
 
     commands:
       - go get
