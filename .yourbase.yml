@@ -16,6 +16,7 @@ ci:
   builds:
     - name: default
       build_target: default
+      when: branch is 'master'
 
 
 package:
