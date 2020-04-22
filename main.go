@@ -12,7 +12,7 @@ import (
 
 func main() {
 	log.Info("demo-server starting ...")
-	port := flag.String("port", "3001", "Specify port")
+	port := flag.String("port", "3001", "Specify port.")
 	flag.Parse()
 
 	if envPort := os.Getenv("PORT"); len(envPort) > 0 {
