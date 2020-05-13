@@ -4,7 +4,6 @@ dependencies:
 
 build_targets:
   - name: default
-    host_only: true
     tags:
       os: linux
 
