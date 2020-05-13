@@ -16,7 +16,7 @@ ci:
   builds:
     - name: default
       build_target: default
-      when: branch is 'master'
+      when: branch is 'master' OR action is 'pull_request'
 
 
 package:
