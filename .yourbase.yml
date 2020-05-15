@@ -12,6 +12,15 @@ build_targets:
       - go build
       - go test ./...
 
+  - name: deploy
+    tags:
+      os: linux
+
+    commands:
+      - go get
+      - go build
+      - go test ./...
+      # yb package ...
 ci:
   builds:
     - name: default
@@ -21,7 +30,7 @@ ci:
 
 package:
   docker:
-    base_image: ubuntu
+    base_image: alpine
     image: demo-server
     working_dir: /
     exec: /demo-server
