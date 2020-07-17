@@ -7,15 +7,14 @@ build_targets:
     dependencies:
       containers:
         postgres:
+          ports:
+            - 5440:5440
           label: postgres
           image: postgis/postgis:9.5-2.5
           environment:
             - POSTGRES_USER=loggitest
             - POSTGRES_PASSWORD=loggitest
             - POSTGRES_DB=loggitest
-          port_check:
-            port: 5432
-            timeout: 90
        redis:
          label: redis
          image: redis:latest
