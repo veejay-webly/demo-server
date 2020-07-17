@@ -6,21 +6,9 @@ build_targets:
   - name: default
     dependencies:
       containers:
-        postgres:
-          ports:
-            - 5440:5440
-          label: postgres
-          image: postgis/postgis:9.5-2.5
-          environment:
-            - POSTGRES_USER=loggitest
-            - POSTGRES_PASSWORD=loggitest
-            - POSTGRES_DB=loggitest
        redis:
          label: redis
          image: redis:latest
-         port_check:
-           port: 6379
-           timeout: 30
     tags:
       os: linux
 
