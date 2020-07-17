@@ -6,9 +6,17 @@ build_targets:
   - name: default
     dependencies:
       containers:
-       redis:
-         label: redis
-         image: redis:latest
+        db:
+          image: postgres:9.3
+          ports:
+            - 50042:5432
+          environment:
+            - POSTGRES_PASSWORD=yourbase
+            - POSTGRES_USER=yourbase
+            - POSTGRES_DB=yourbase
+        redis:
+          label: redis
+          image: redis:latest
     tags:
       os: linux
 
