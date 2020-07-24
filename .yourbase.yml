@@ -11,6 +11,7 @@ build_targets:
           image: redis:latest
     tags:
       os: linux
+      project: 1
 
     commands:
       - go get
