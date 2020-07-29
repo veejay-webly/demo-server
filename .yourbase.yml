@@ -7,7 +7,7 @@ build_targets:
     tags:
       os: linux
     environment:
-      - SKIPPER_IGNORE="ls"
+      - SKIPPER_IGNORE=ls
     commands:
       - ls
       - echo $YB_CUSTOMER_ORG
