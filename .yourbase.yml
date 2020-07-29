@@ -10,6 +10,8 @@ build_targets:
       - SKIPPER_IGNORE="ls"
     commands:
       - ls
+      - echo $YB_CUSTOMER_ORG
+      - echo $SKIPPER_IGNORE
       - go get
       - go build
       - go test ./...
