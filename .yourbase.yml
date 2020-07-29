@@ -1,19 +1,25 @@
 dependencies:
   build:
-    - go:1.12.1
+    - go:1.14.1
 
 build_targets:
   - name: default
-    dependencies:
-      containers:
-        redis:
-          label: redis
-          image: redis:latest
     tags:
       os: linux
-      project: 1
+    environment:
+      - SKIPPER_IGNORE="ls"
+    commands:
+      - ls
+      - go get
+      - go build
+      - go test ./...
+
+  - name: mac
+    tags:
+      os: linux
 
     commands:
+      - ls
       - go get
       - go build
       - go test ./...
