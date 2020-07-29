@@ -12,6 +12,7 @@ build_targets:
       - ls
       - echo $YB_CUSTOMER_ORG
       - echo $SKIPPER_IGNORE
+      - env
       - go get
       - go build
       - go test ./...
