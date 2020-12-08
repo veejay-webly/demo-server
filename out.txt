@@ -1,0 +1,32 @@
+ === BUILD HOST ===
+GoOS: darwin
+Kernel: Darwin
+Core: 19.6.0
+Platform: x86_64
+OS: Darwin
+Hostname: MacBook-Pro.local
+CPUs: 12
+ === BUILD PACKAGE SETUP ===
+ === BUILD ===
+ -- Build target: default -- 
+Dockerfile
+README.md
+build
+build.sh
+config.yml
+demo-server
+deploy
+go.mod
+go.sum
+main.go
+out.txt
+yourbase.hcl
+PATH=/home/yourbase/.cache/yb/tools/go/gopath/bin:/home/yourbase/.cache/yb/tools/go/go1.14.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+HOSTNAME=ef3b70cca425
+HOME=/home/yourbase
+TZ=UTC
+GOPATH=/home/yourbase/.cache/yb/tools/go/gopath:/workspace
+GOROOT=/home/yourbase/.cache/yb/tools/go/go1.14.1
+SKIPPER_IGNORE=ls
+?   	github.com/jamesnaftel/demo-server	[no test files]
+ -- BUILD SUCCEEDED -- 
