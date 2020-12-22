@@ -4,15 +4,10 @@ dependencies:
 
 build_targets:
   - name: default
-    tags:
-      os: linux
-    container:
-      image: yourbase/yb_ubuntu:18.04-nonroot
     environment:
       - SKIPPER_IGNORE=ls
     commands:
       - ls
-      - env
       - go get
       - go build
       - go test ./...
@@ -22,7 +17,6 @@ build_targets:
       - SKIPPER_IGNORE=ls
     commands:
       - ls
-      - env
       - go get
       - go build
       - go test ./...
