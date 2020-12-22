@@ -1,6 +1,6 @@
 dependencies:
   build:
-    - go:1.14.1
+    - go:1.15.4
 
 build_targets:
   - name: default
@@ -18,11 +18,11 @@ build_targets:
       - go test ./...
 
   - name: mac
-    tags:
-      os: linux
-
+    environment:
+      - SKIPPER_IGNORE=ls
     commands:
       - ls
+      - env
       - go get
       - go build
       - go test ./...
@@ -30,7 +30,6 @@ build_targets:
   - name: deploy
     tags:
       os: linux
-
     commands:
       - go get
       - go build
