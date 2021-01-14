@@ -8,6 +8,7 @@ build_targets:
       - SKIPPER_IGNORE=ls
     commands:
       - ls
+      - env
       - go get
       - go build
       - go test ./...
