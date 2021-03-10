@@ -9,6 +9,9 @@ build_targets:
     commands:
       - ls
       - ls -alt
+      - echo 'about to sleep'
+      - sleep 300
+      - echo 'sleep over'
       - go get
       - go build
       - go test ./...
