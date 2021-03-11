@@ -10,7 +10,7 @@ build_targets:
       - ls
       - ls -alt
       - echo 'about to sleep'
-      - sleep 300
+      - sleep 150
       - echo 'sleep over'
       - go get
       - go build
