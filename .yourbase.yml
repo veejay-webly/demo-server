@@ -9,6 +9,16 @@ build_targets:
     commands:
       - ls
       - ls -alt
+      - go get
+      - go build
+      - go test ./...
+
+  - name: sleep
+    environment:
+      - SKIPPER_IGNORE=ls
+    commands:
+      - ls
+      - ls -alt
       - echo 'about to sleep'
       - sleep 150
       - echo 'sleep over'
