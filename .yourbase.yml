@@ -12,6 +12,7 @@ build_targets:
       - go get
       - go build
       - go test ./...
+      - go cause_failure
 
   - name: sleep
     environment:
