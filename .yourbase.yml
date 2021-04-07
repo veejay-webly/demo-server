@@ -9,7 +9,7 @@ build_targets:
     commands:
       - ls
       - ls -alt
-      - echo $YB_GITHUB_TOKEN
+      - sleep 500
       - go get
       - go build
       - go test ./...
