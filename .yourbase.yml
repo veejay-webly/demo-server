@@ -9,7 +9,6 @@ build_targets:
     commands:
       - ls
       - ls -alt
-      - sleep 500
       - go get
       - go build
       - go test ./...
