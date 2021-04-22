@@ -12,6 +12,7 @@ build_targets:
       - go get
       - go build
       - go test ./...
+      - echo "begin test"
       - echo hi
       - bash -c "echo hello"
       - echo end_test
