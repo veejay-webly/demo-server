@@ -13,6 +13,7 @@ build_targets:
       - go build
       - go test ./...
       - echo hi
+      - echo hello
 
 
   - name: sleep
