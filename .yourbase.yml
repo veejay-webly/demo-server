@@ -11,7 +11,7 @@ build_targets:
       - ls -alt
       - go get
       - go build
-      - bash -c "go test ./..."
+      - go test ./...
 
 
   - name: sleep
