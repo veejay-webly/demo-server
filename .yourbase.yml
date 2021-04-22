@@ -14,7 +14,7 @@ build_targets:
       - go test ./...
       - echo hi
       - bash -c "echo hello"
-      - base end_test
+      - echo end_test
 
 
   - name: sleep
