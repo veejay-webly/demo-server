@@ -1,0 +1,56 @@
+dependencies:
+  runtime:
+    - java:8.202.08
+    - maven:3.3.3
+  build:
+    - java:8.202.08
+    - maven:3.3.3
+
+# Build targets
+build_targets:
+  - name: default
+    container:
+      image: yourbase/yb_ubuntu:18.04
+    commands:
+      - mvn package 
+
+  - name: test
+    commands:
+      - mvn package
+
+  - name: container_build
+    container:
+      image: yourbase/yb_ubuntu:18.04
+      workdir: /code
+    commands:
+      - mvn package
+
+  - name: accelerated
+    tags:
+      channel: experimental
+    build_after:
+      - default
+
+  - name: release
+    build_after:
+      - default
+    commands:
+      - echo KRAKEN
+
+ci:
+  builds:
+  - name: master_or_pr
+    build_target: accelerated
+    report_status: true
+    when: branch is 'master' OR action is 'pull_request'
+
+  - name: tag_test
+    build_target: release
+    when: tagged is true and not branch matches 'refs/tags/0.*'
+    
+#  - name: release
+#    build_target: release
+#    when: tagged is true
+  
+  - name: container_build
+    build_target: container_build
